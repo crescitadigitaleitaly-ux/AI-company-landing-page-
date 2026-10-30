@@ -1,0 +1,31 @@
+{
+  "name": "aervek-industrial-concept",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build && node --import tsx scripts/prerender.tsx && node scripts/security-headers.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test:browser": "node scripts/qa.mjs",
+    "preview:release": "node scripts/release-preview.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.577.0",
+    "motion": "^12.38.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.0",
+    "lighthouse": "^13.6.0",
+    "playwright": "^1.58.2",
+    "prettier": "^3.9.10",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.0"
+  }
+}

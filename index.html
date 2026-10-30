@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const theme = new URLSearchParams(location.search).get('theme');
+        document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+      })();
+    </script>
+    <meta name="theme-color" content="#080d13" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>AERVEK — Intelligence for the Physical World</title>
+    <meta
+      name="description"
+      content="An independent industrial AI concept: connecting machines, operational data and human decisions. Explore the platform and interactive product preview."
+    />
+    <meta property="og:title" content="AERVEK — Intelligence for the Physical World" />
+    <meta
+      property="og:description"
+      content="An independent portfolio concept for the next generation of industrial intelligence."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://mouzzambuild.com/hero.webp" />
+    <meta property="og:url" content="https://mouzzambuild.com/" />
+    <link rel="canonical" href="https://mouzzambuild.com/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      fetchpriority="high"
+      as="image"
+      href="/hero.webp"
+      imagesrcset="/hero-mobile.webp 768w, /hero.webp 1536w"
+      imagesizes="100vw"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

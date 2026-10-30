@@ -1,0 +1,12 @@
+node_modules/
+dist/
+artifacts/
+*.log
+
+.env
+.env.*
+!.env.example
+.hostinger/
+*.pem
+*.key
+backups/
