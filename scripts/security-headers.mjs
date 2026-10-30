@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 const html = readFileSync('dist/index.html', 'utf8');
 const hashes = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
   .filter((m) => !m[1].includes('src='))
-  .map((m) => `'sha256-${createHash('sha256').update(m[2]).digest('base64')}'`);
+  .map((m) => `'sha256-${createHash('sha256').update(m[2].replace(/\r\n?/g, '\n')).digest('base64')}'`);
 const headers = {
   'Content-Security-Policy': `default-src 'self'; script-src 'self' ${hashes.join(' ')}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests`,
   'X-Content-Type-Options': 'nosniff',
